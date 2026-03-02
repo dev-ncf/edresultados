@@ -1,0 +1,296 @@
+<!-- Bibliotecas Externas -->
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --uni-blue-dark: #00225a;
+        --uni-blue-bright: #005bea;
+        --uni-orange: #ff8a00;
+    }
+    #uni-home { font-family: 'Plus Jakarta Sans', sans-serif; color: #1e293b; }
+    h1, h2, h3, h4 { font-family: 'Bricolage Grotesque', sans-serif; }
+
+    /* Custom Swiper Styles */
+    .swiper { width: 100%; height: 650px; }
+    .swiper-slide { position: relative; overflow: hidden; }
+    .swiper-button-next, .swiper-button-prev { color: white !important; transform: scale(0.7); }
+    .swiper-pagination-bullet-active { background: var(--uni-orange) !important; }
+
+    /* Efeito de Vidro */
+    .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
+    
+    /* Logos Marquee */
+    .logo-track { display: flex; width: calc(250px * 20); animation: marquee 30s linear infinite; }
+    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-250px * 10)); } }
+
+    /* Bento Grid Styles */
+    .bento-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid #f1f5f9; }
+    .bento-card:hover { transform: translateY(-8px); border-color: var(--uni-blue-bright); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1); }
+   .article-info, 
+    .article-index, 
+    .rating-container, 
+    .icons, 
+    .star-rating,
+    .content_rating,
+    .as-rating { 
+        display: none !important; 
+    }
+    
+    /* Remove espaçamentos extras que o Joomla cria para essas infos */
+    dl.article-info { display: none; }
+</style>
+<style>
+    /* Configuração da animação infinita */
+    @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); } /* Move metade da largura total */
+    }
+
+    .animate-marquee {
+        display: flex;
+        width: max-content;
+        animation: marquee 30s linear infinite;
+    }
+
+    /* Pausa o slide ao passar o mouse */
+    .animate-marquee:hover {
+        animation-play-state: paused;
+    }
+
+    /* Garante que os logos tenham um tamanho consistente */
+    .partner-logo {
+        height: 60px;
+        width: auto;
+        margin-left: 50px;
+        margin-right: 50px;
+        object-fit: contain;
+        filter: grayscale(100%);
+        opacity: 0.6;
+        transition: all 0.3s ease;
+    }
+
+    .partner-logo:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+        transform: scale(1.1);
+    }
+</style>
+
+<div id="uni-home" class="bg-[#fcfdfe]">
+
+    <!-- CAROUSEL PRINCIPAL (Swiper) -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper text-white">
+            
+            <!-- Slide 1: Edital 2026 -->
+            <div class="swiper-slide bg-slate-900">
+                                <div class="absolute inset-0 bg-gradient-to-t from-[#00225a] via-transparent to-transparent"></div>
+                <div class="relative z-10 h-full flex flex-col justify-center items-start max-w-7xl mx-auto px-6 space-y-6">
+                    <span class="bg-orange-600 px-4 py-1 rounded text-xs font-bold uppercase tracking-widest leading-none">Inscrições 2026</span>
+                    <h2 class="text-5xl md:text-7xl font-extrabold max-w-3xl leading-[1.1]">Resultados de Admissão<br/><span class="text-orange-400 italic">UniRovuma 2026</span></h2>
+                    <p class="text-lg opacity-90 max-w-xl font-light leading-relaxed">Já se encontram disponíveis os resultados do concurso de admissão à Universidade Rovuma, na modalidade de ensino a distância. Para consultar o seu resultado, por favor, clique no botão abaixo e siga as instruções apresentadas.</p>
+                    <div class="flex gap-4 mb-10">
+                        <a href="https://ead-unirovuma.great-site.net" class="bg-white text-[#00225a] px-8 py-4 rounded-xl font-bold hover:bg-orange-500 hover:text-bg-orange-800 transition-all shadow-2xl">Consultar Resultados</a>
+                      
+                    </div>
+                </div>
+            </div>
+
+         
+
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- QUICK LINKS (Pós-Graduação e EaD) -->
+    <section class="relative z-30 max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-4">
+            <a href="#" class="bg-white p-6 rounded-2xl shadow-xl flex flex-col items-center text-center border-b-4 border-blue-900 hover:bg-blue-50 transition">
+                <div class="w-12 h-12 bg-blue-100 text-blue-900 rounded-full flex items-center justify-center mb-3"><i class="fas fa-graduation-cap italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm italic font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm"></i></div>
+                <span class="text-xs font-black uppercase text-blue-900 italic">Pós-Graduação</span>
+                <span class="text-[10px] text-slate-500 mt-1 italic uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm">Edital 2025</span>
+            </a>
+            <a href="https://unirovuma.ac.mz/images/PROGRAMA%20DE%20MOBILIDADE%20DE%20FUNCIONARIOS_260204_223659.pdf" class="bg-white p-6 rounded-2xl shadow-xl flex flex-col items-center text-center border-b-4 border-blue-900 hover:bg-blue-50 transition">
+                <div class="w-12 h-12 bg-blue-100 text-blue-900 rounded-full flex items-center justify-center mb-3"><i class="fas fa-id-card italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm italic font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm"></i></div>
+                <span class="text-xs font-black uppercase text-blue-900 italic">Candidatura</span>
+                <span class="text-[10px] text-slate-500 mt-1 italic">Programa de mobilidade de funcionários do ensino superior</span>
+            </a>
+            <a href="https://ead-unirovuma.great-site.net" class="bg-white p-6 rounded-2xl shadow-xl flex flex-col items-center text-center border-b-4 border-cyan-500 hover:bg-cyan-50 transition italic uppercase italic shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm">
+                <div class="w-12 h-12 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center mb-3 italic"><i class="fas fa-laptop-house shadow-sm"></i></div>
+                <span class="text-xs font-black uppercase text-cyan-800 italic shadow-sm">Educação EaD</span>
+                <span class="text-[10px] text-slate-500 mt-1 italic">Resultados de Admissão</span>
+            </a>
+            <a href="#" class="bg-white p-6 rounded-2xl shadow-xl flex flex-col items-center text-center border-b-4 border-cyan-500 hover:bg-cyan-50 transition italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm">
+                <div class="w-12 h-12 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center mb-3"><i class="fas fa-list-check"></i></div>
+                <span class="text-xs font-black uppercase text-cyan-800 italic uppercase italic">Inscritos EaD</span>
+                <span class="text-[10px] text-slate-500 mt-1 italic uppercase italic shadow-sm shadow-sm shadow-sm">Lista de Candidatos</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- IDENTIDADE (MISSÃO/VISÃO/VALORES) -->
+    <section class="py-24 max-w-7xl mx-auto px-6 italic">
+        <div class="grid lg:grid-cols-3 gap-8 italic font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm">
+            <div class="bento-card bg-white p-8 rounded-3xl relative overflow-hidden group">
+                <img src="images/2024/08/30/mission-hover.fw.png" class="absolute top-0 right-0 w-32 opacity-10 group-hover:scale-110 transition" />
+                <h3 class="text-2xl font-black text-blue-900 mb-4 italic italic uppercase italic">Missão</h3>
+                <p class="text-slate-600 leading-relaxed text-sm text-justify italic font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm">Formar técnicos superiores com qualidade de modo a que contribuam de forma criativa para um desenvolvimento económico sociocultural sustentável.</p>
+            </div>
+            <div class="bento-card bg-[#00225a] p-8 rounded-3xl text-white relative overflow-hidden group">
+                <h3 class="text-2xl font-black text-orange-400 mb-4 italic uppercase shadow-sm">Visão</h3>
+                <p class="text-blue-100 leading-relaxed text-sm text-justify italic">Ser uma instituição de ensino superior de qualidade e excelência no processo de ensino e aprendizagem a nível nacional e internacional.</p>
+            </div>
+            <div class="bento-card bg-white p-8 rounded-3xl relative overflow-hidden group italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm">
+                <h3 class="text-2xl font-black text-blue-900 mb-4 italic italic uppercase italic">Valores</h3>
+                <div class="flex flex-wrap gap-2 italic uppercase italic shadow-sm shadow-sm">
+                    <span class="bg-slate-100 px-3 py-1 rounded-full text-[10px] font-bold uppercase italic">Excelência</span>
+                    <span class="bg-slate-100 px-3 py-1 rounded-full text-[10px] font-bold uppercase italic">Integridade</span>
+                    <span class="bg-slate-100 px-3 py-1 rounded-full text-[10px] font-bold uppercase italic">Laicidade</span>
+                    <span class="bg-slate-100 px-3 py-1 rounded-full text-[10px] font-bold uppercase italic shadow-sm">Inovação</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESTATÍSTICAS ANIMADAS -->
+    <section class="py-20 bg-blue-900 text-white italic">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 text-center">
+            <div>
+                <div class="text-6xl font-black text-orange-400 mb-2 italic">16k+</div>
+                <div class="text-sm font-bold uppercase tracking-widest italic">Estudantes Efectivos</div>
+            </div>
+            <div>
+                <div class="text-6xl font-black text-cyan-400 mb-2 italic uppercase italic shadow-sm shadow-sm">785</div>
+                <div class="text-sm font-bold uppercase tracking-widest italic shadow-sm">Corpo Docente e CTA</div>
+            </div>
+            <div>
+                <div class="text-6xl font-black text-white mb-2 italic shadow-sm shadow-sm italic font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm">53</div>
+                <div class="text-sm font-bold uppercase tracking-widest italic">Cursos de Graduação</div>
+            </div>
+        </div>
+    </section>
+
+     <!-- SEÇÃO DINÂMICA: NOTÍCIAS E EVENTOS -->
+    <section class="py-20 max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-12 italic">
+        <div class="lg:col-span-2 italic shadow-sm shadow-sm">
+            <h2 class="text-2xl font-black text-blue-900 mb-8 uppercase italic border-l-4 border-orange-500 pl-4 shadow-sm shadow-sm shadow-sm shadow-sm">Notícias Dinâmicas</h2>
+            <!-- CHAMADA DINÂMICA DO JOOMLA -->
+            <div class="dynamic-news-container italic">
+                {loadmoduleid 135}
+            </div>
+        </div>
+        <div class="italic font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm">
+            <h2 class="text-2xl font-black text-blue-900 mb-8 uppercase italic shadow-sm shadow-sm">Próximos Eventos</h2>
+            <div class="bg-slate-50 p-6 rounded-[2rem] border border-slate-100 italic shadow-sm shadow-sm">
+                {loadmoduleid 102}
+            </div>
+        </div>
+    </section>
+
+
+    <!-- REITORIA (REITOR + 2 VICES) -->
+    <section class="py-24 max-w-7xl mx-auto px-6 italic">
+        <h2 class="text-center text-3xl font-black text-blue-900 mb-16 uppercase italic">Gabinete da Reitoria</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 italic">
+            <!-- Reitor -->
+            <div class="text-center italic">
+                <div class="w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-900 shadow-lg italic">
+                    <img src="images/2024/08/30/mr-unirovuma-2.jpg" class="w-full h-full object-cover italic shadow-sm shadow-sm">
+                </div>
+                <h4 class="text-blue-900 font-bold uppercase text-sm leading-tight italic shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm">Prof. Doutor Mário Jorge Brito dos Santos</h4>
+                <p class="text-orange-600 font-bold text-xs uppercase mt-2 italic shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm">Reitor</p>
+            </div>
+            <!-- Vice Académico -->
+            <div class="text-center italic font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm">
+                <div class="w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden border-4 border-cyan-500 shadow-lg italic">
+                    <img src="images/2024/08/30/vice-academico.jpg" class="w-full h-full object-cover shadow-sm shadow-sm">
+                </div>
+                <h4 class="text-blue-900 font-bold uppercase text-sm leading-tight italic shadow-sm">Prof. Doutor Ibraimo Hassane Mussagy</h4>
+                <p class="text-cyan-600 font-bold text-xs uppercase mt-2 italic shadow-sm shadow-sm">Vice-Reitor Académico</p>
+            </div>
+            <!-- Vice Administrativo -->
+            <div class="text-center italic font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm">
+                <div class="w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-500 shadow-lg italic shadow-sm shadow-sm">
+                    <img src="images/2024/08/30/vice-reitor-administrativo.fw.png" class="w-full h-full object-cover">
+                </div>
+                <h4 class="text-blue-900 font-bold uppercase text-sm leading-tight italic shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm">Prof. Doutor José dos Santos Baptista</h4>
+                <p class="text-orange-600 font-bold text-xs uppercase mt-2 italic shadow-sm shadow-sm shadow-sm">Vice-Reitor Administrativo</p>
+            </div>
+        </div>
+    </section>
+
+   <!-- PARCEIROS (SLIDE INFINITO) -->
+<section class="py-16 bg-white border-y border-slate-100 overflow-hidden relative">
+    <div class="max-w-7xl mx-auto px-6 mb-10">
+        <h4 class="text-center text-slate-400 font-bold text-xs uppercase tracking-[0.3em] italic">
+            Parceiros Institucionais
+        </h4>
+    </div>
+
+    <!-- Container do Slider -->
+    <div class="relative flex overflow-hidden">
+        <!-- O bloco de logos é duplicado para criar o efeito visual de infinito -->
+        <div class="animate-marquee flex items-center">
+            
+            <!-- LISTA DE LOGOS (GRUPO 1) -->
+            <img src="images/2024/08/30/parceiro-5.fw.png" alt="Parceiro" class="partner-logo">
+            <img src="images/2024/08/30/parceiro-6.fw.png" alt="Parceiro" class="partner-logo">
+            <img src="images/2024/08/30/huawei-logo.fw.png" alt="Huawei" class="partner-logo">
+            <img src="images/2024/08/30/up-maputo.fw.png" alt="UP Maputo" class="partner-logo">
+            <img src="images/2024/08/30/instituto-de-camoes.fw.png" alt="Camões" class="partner-logo">
+            <img src="images/2024/08/30/universitat-leipzig.fw.png" alt="Leipzig" class="partner-logo">
+            <img src="images/2024/08/30/parceiro-10.fw.png" alt="Parceiro" class="partner-logo">
+            <img src="images/2024/08/30/parceiro-13.fw.png" alt="Parceiro" class="partner-logo">
+
+            <!-- LISTA DE LOGOS (GRUPO 2 - IGUAL AO ANTERIOR PARA O LOOP) -->
+            <img src="images/2024/08/30/parceiro-5.fw.png" alt="Parceiro" class="partner-logo">
+            <img src="images/2024/08/30/parceiro-6.fw.png" alt="Parceiro" class="partner-logo">
+            <img src="images/2024/08/30/huawei-logo.fw.png" alt="Huawei" class="partner-logo">
+            <img src="images/2024/08/30/up-maputo.fw.png" alt="UP Maputo" class="partner-logo">
+            <img src="images/2024/08/30/instituto-de-camoes.fw.png" alt="Camões" class="partner-logo">
+            <img src="images/2024/08/30/universitat-leipzig.fw.png" alt="Leipzig" class="partner-logo">
+            <img src="images/2024/08/30/parceiro-10.fw.png" alt="Parceiro" class="partner-logo">
+            <img src="images/2024/08/30/parceiro-13.fw.png" alt="Parceiro" class="partner-logo">
+            
+        </div>
+    </div>
+</section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-white py-16 px-6 italic font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 italic">
+            <div>
+                <h4 class="text-xl font-bold mb-4 italic uppercase">UNIVERSIDADE ROVUMA</h4>
+                <p class="text-slate-400 text-sm italic uppercase">Av. Josina Machel, 256 - Nampula, Moçambique</p>
+                <p class="text-slate-400 text-sm mt-2 italic shadow-sm shadow-sm">Email: secretariageral@unirovuma.ac.mz</p>
+                <div class="mt-6 flex gap-4 italic shadow-sm shadow-sm italic shadow-sm shadow-sm shadow-sm">
+                   <a href="https://web.facebook.com/UniRovuma" target="_blank" class="w-10 h-10 bg-blue-600 flex items-center justify-center rounded-full hover:bg-blue-700"><i class="fab fa-facebook-f shadow-sm shadow-sm shadow-sm"></i></a>
+                   <a href="https://www.youtube.com/c/UniversidadeRovuma" target="_blank" class="w-10 h-10 bg-red-600 flex items-center justify-center rounded-full hover:bg-red-700 shadow-sm shadow-sm shadow-sm italic shadow-sm shadow-sm shadow-sm shadow-sm"><i class="fab fa-youtube italic shadow-sm shadow-sm"></i></a>
+                </div>
+            </div>
+            <div class="bg-slate-800 p-6 rounded-2xl italic font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm shadow-sm font-bold uppercase tracking-tighter italic italic font-bold uppercase tracking-tighter italic uppercase italic shadow-sm italic uppercase italic shadow-sm italic uppercase italic shadow-sm shadow-sm italic uppercase italic shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm shadow-sm">
+                <h4 class="text-lg font-bold mb-4 italic uppercase">Boletim Informativo</h4>
+                <p class="text-sm text-slate-400 mb-4 italic uppercase">Baixe a última edição do nosso boletim mensal.</p>
+                <a href="/media/attachments/2025/10/07/boletim-informativo-ed.-46---set.-2025.pdf" class="inline-block bg-orange-600 px-6 py-2 rounded font-bold hover:bg-orange-700 transition italic shadow-sm shadow-sm shadow-sm shadow-sm uppercase italic tracking-tighter">Baixar PDF</a>
+            </div>
+        </div>
+    </footer>
+
+
+</div>
+
+<!-- Inicialização do Carrossel -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        loop: true,
+        autoplay: { delay: 5000, disableOnInteraction: false },
+        pagination: { el: ".swiper-pagination", clickable: true },
+        navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+    });
+</script>
